@@ -1,0 +1,40 @@
+{
+  "name": "@mguidetti/stimulus-nested-form",
+  "version": "0.1.0",
+  "description": "A Stimulus component for nested rails forms",
+  "main": "dist/stimulus-nested-form.js",
+  "umd:main": "dist/stimulus-nested-form.umd.js",
+  "module": "dist/stimulus-nested-form.m.js",
+  "esmodule": "dist/stimulus-nested-form.modern.js",
+  "repository": {
+    "url": "https://github.com/mguidetti/stimulus-nested-form",
+    "type": "git"
+  },
+  "author": "Michael Guidetti <michael@michaelguidetti.info>",
+  "contributors": [],
+  "license": "MIT",
+  "private": false,
+  "amdName": "StimulusNestedForm",
+  "keywords": [
+    "stimulus",
+    "stimulusjs",
+    "controller",
+    "components"
+  ],
+  "peerDependencies": {
+    "stimulus": ">=2.0.0"
+  },
+  "scripts": {
+    "build": "microbundle --globals stimulus=Stimulus",
+    "prepublish": "yarn build"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "babel-preset-env": "^1.7.0",
+    "microbundle": "^0.13.3",
+    "mutationobserver-shim": "^0.3.7"
+  },
+  "dependencies": {
+    "stimulus": "^2.0.0"
+  }
+}
