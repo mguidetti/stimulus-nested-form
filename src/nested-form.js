@@ -13,7 +13,6 @@ export default class extends Controller {
   }
 
   connect() {
-    this.wrapperClass = this.data.get('wrapperClass') || 'nested-fields'
     this.replaceKey = this.replaceKeyValue || 'NEW_RECORD'
   }
 
@@ -41,6 +40,7 @@ export default class extends Controller {
     this.listTarget.insertAdjacentHTML('beforeend', content)
 
     const newElement = this.listTarget.lastElementChild
+
     newElement.dataset.tempId = tempId
 
     if (this.listTarget.sortableController) this.listTarget.sortableController.update()
@@ -49,7 +49,7 @@ export default class extends Controller {
   }
 
   removeAssociation(event) {
-    const wrapper = event.target.closest('.' + this.wrapperClass)
+    const wrapper = event.target.closest("[data-nested-form-target='item']")
 
     // New records are simply removed from the page
     if (wrapper.dataset.newRecord == 'true') {
